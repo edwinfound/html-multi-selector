@@ -2,8 +2,6 @@
 
 ## 它是什么
 
-直接看图
-
 ![image](https://github.com/edwin404/html-multi-selector/raw/master/demo/images/demo.png)
 
 ## 如何使用
