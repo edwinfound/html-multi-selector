@@ -1,7 +1,7 @@
 /**
  * html multi selector
  *
- * version : 1.0.0
+ * version : beta
  * author  : edwin404
  * Github  : https://github.com/edwin404/html-multi-selector
  *
