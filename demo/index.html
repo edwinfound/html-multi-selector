@@ -34,6 +34,13 @@
             <a class="uk-button uk-button-primary" href="javascript:;" id="demoFixedLevel">选择</a>
         </div>
     </div>
+    <hr>
+    <div class="uk-panel uk-panel-header">
+        <h3 class="uk-panel-title">中国省市</h3>
+        <div>
+            <a class="uk-button uk-button-primary" href="javascript:;" id="demoChinaArea">选择</a>
+        </div>
+    </div>
 </div>
 
 <div id="">
@@ -109,6 +116,24 @@
         });
         $('#demoFixedLevel').on('click', function () {
             demoFixedLevel.open();
+        });
+
+        // 限定列数
+        $.get('./china-area.json',{},function(chinaAreaJson){
+            var demoChinaArea = new HtmlMultiSelector({
+                data: chinaAreaJson,
+                maxLevel: 3,
+                fixedLevel: 3,
+                callback: {
+                    done: function () {
+                        var titles = this.titleVal();
+                        $('#demoChinaArea').html('你选择了:' + titles.join(','));
+                    }
+                }
+            });
+            $('#demoChinaArea').on('click', function () {
+                demoChinaArea.open();
+            });
         });
 
     });
