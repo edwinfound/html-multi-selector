@@ -1,5 +1,9 @@
 # 基于HTML的多级选择
 
+## 它是什么
+
+直接看图
+
 ![image](https://github.com/edwin404/html-multi-selector/raw/master/demo/images/demo.png)
 
 ## 如何使用
@@ -35,6 +39,41 @@ $('#demoStatic').on('click', function () {
 
 更多参照示例
 
+## 可配置的参数说明
+
+```javascript
+var options={
+    // 初始化时多个值的分隔符
+    seperator   : ',',
+    // 数据是否使用动态
+    dynamic     : false,
+    // 动态获取数据库路径
+    server      : "/path/to/data",
+    // 静态数据
+    data        : [],
+    // 最大级
+    maxLevel    : 0,
+    // 固定级
+    fixedLevel  : 0,
+    // 语言包
+    lang        : {
+        close       : '取消',
+        done        : '确定',
+        pleaseSelect: '请选择'
+    },
+    callback: {
+        // 选择发生变化时回调
+        change: function (values, titles) {
+        },
+        // 点击确定时回调
+        done: function () {
+        },
+        // 点击取消时回调
+        close: function () {
+        },
+    }
+}
+````
 
 ## 在线Demo演示
 
