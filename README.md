@@ -6,15 +6,19 @@
 
 1. 引入css
 
-`<link rel="stylesheet" href="/path/to/css/html-multi-selector.css">`
+```html
+<link rel="stylesheet" href="/path/to/css/html-multi-selector.css">
+```
 
 2. 引入js
 
-`<link rel="stylesheet" href="/path/to/js/html-multi-selector.js">`
+```html
+<link rel="stylesheet" href="/path/to/js/html-multi-selector.js">
+````
 
 3. 使用JS代码初始化
 
-```
+```javascript
 var demoStatic = new HtmlMultiSelector({
     data: testData,
     callback: {
