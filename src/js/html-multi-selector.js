@@ -142,8 +142,9 @@
             });
 
             this.dom.dialog.on(touchMove, document, function (event) {
+                event.preventDefault();
                 if (null == currentOption) {
-                    return false;
+                    return;
                 }
                 var y, diff, diffInEm, newTopInEm;
                 if (isMobile) {
@@ -184,7 +185,7 @@
             });
 
             this.dom.dialog.on('dialog.category.change', function (event, optionLevel) {
-                
+
                 var $option = optionLevel.find('[data-options] > [data-selected]');
                 var level = parseInt(optionLevel.attr('data-option-level'));
                 var value = $option.attr('data-value');
