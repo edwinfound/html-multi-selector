@@ -6,19 +6,19 @@
 
 ## 如何使用
 
-1. 引入css
+step1. 引入css
 
 ```html
 <link rel="stylesheet" href="/path/to/css/html-multi-selector.css">
 ```
 
-2. 引入js
+step2. 引入js
 
 ```html
 <link rel="stylesheet" href="/path/to/js/html-multi-selector.js">
 ````
 
-3. 使用JS代码初始化
+step3. 使用JS代码初始化
 
 ```javascript
 var demoStatic = new HtmlMultiSelector({
