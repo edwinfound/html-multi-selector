@@ -4,6 +4,8 @@
 
 ![image](https://github.com/edwin404/html-multi-selector/raw/master/demo/images/demo.png)
 
+[http://edwin404.com/html-multi-selector/demo](http://edwin404.com/html-multi-selector/demo)
+
 ## 如何使用
 
 step1. 引入css
@@ -73,6 +75,6 @@ var options={
 }
 ````
 
-## 在线Demo演示
+## 意见反馈
 
-[http://edwin404.com/html-multi-selector/demo](http://edwin404.com/html-multi-selector/demo)
+[https://github.com/edwin404/html-multi-selector/issues](https://github.com/edwin404/html-multi-selector/issues)
