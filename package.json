@@ -1,0 +1,14 @@
+{
+  "name": "html-multi-selector",
+  "version": "1.0.0",
+  "description": "",
+  "author": "edwin404",
+  "license": "MIT",
+  "devDependencies": {
+    "gulp": "^3.9.1",
+    "gulp-clean-css": "^2.0.12",
+    "gulp-less": "^3.1.0",
+    "gulp-print": "^2.0.1",
+    "gulp-uglify": "^2.0.0"
+  }
+}

@@ -1,0 +1,119 @@
+<!doctype html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="description" content="">
+    <meta name="keywords" content="">
+    <meta name="viewport" content="width=320, minimum-scale=0.5, maximum-scale=5, user-scalable=no">
+    <meta name="renderer" content="webkit">
+    <title>Demo</title>
+    <link rel="stylesheet" href="http://cdn.bootcss.com/uikit/2.25.0/css/uikit.css"/>
+    <link rel="stylesheet" href="./../dist/css/html-multi-selector.css">
+</head>
+<body>
+
+<div style="padding:20px;">
+    <div class="uk-panel uk-panel-header">
+        <h3 class="uk-panel-title">静态数据</h3>
+        <div>
+            <a class="uk-button uk-button-primary" href="javascript:;" id="demoStatic">选择</a>
+        </div>
+    </div>
+    <hr>
+    <div class="uk-panel uk-panel-header">
+        <h3 class="uk-panel-title">动态数据</h3>
+        <div>
+            <a class="uk-button uk-button-primary" href="javascript:;" id="demoDynamic">选择</a>
+        </div>
+    </div>
+    <hr>
+    <div class="uk-panel uk-panel-header">
+        <h3 class="uk-panel-title">限定列数</h3>
+        <div>
+            <a class="uk-button uk-button-primary" href="javascript:;" id="demoFixedLevel">选择</a>
+        </div>
+    </div>
+</div>
+
+<div id="">
+    <input type="hidden" name="name-for-you" data-value value="">
+    <input type="hidden" name="name-for-you" data-value data-for-level="1">
+    <input type="hidden" name="name-for-you" data-value data-for-level="2">
+    <input type="hidden" name="name-for-you" data-title value="">
+    <input type="hidden" name="name-for-you" data-title data-for-level="1">
+    <input type="hidden" name="name-for-you" data-title data-for-level="2">
+    <input type="hidden" name="name-for-you" data-title data-for-level="3">
+</div>
+
+<script src="http://cdn.bootcss.com/jquery/1.11.3/jquery.js"></script>
+<script src="http://cdn.bootcss.com/uikit/2.25.0/js/uikit.js"></script>
+
+<script src="./../src/js/html-multi-selector.js"></script>
+<script>
+    $(function () {
+
+        var testData = [
+            {"id": 1, "pid": 0, "title": "分类1"},
+            {"id": 2, "pid": 0, "title": "分类2"},
+            {"id": 3, "pid": 1, "title": "分类1-1"},
+            {"id": 4, "pid": 1, "title": "分类1-2"},
+            {"id": 5, "pid": 2, "title": "分类2-1"},
+            {"id": 6, "pid": 2, "title": "分类2-2"},
+            {"id": 7, "pid": 4, "title": "分类1-2-1"},
+            {"id": 8, "pid": 4, "title": "分类1-2-2"},
+            {"id": 9, "pid": 4, "title": "分类1-2-3"},
+            {"id": 10, "pid": 5, "title": "分类2-1-1"}
+        ];
+
+        // 静态
+        var demoStatic = new HtmlMultiSelector({
+            data: testData,
+            callback: {
+                done: function () {
+                    var titles = this.titleVal();
+                    $('#demoStatic').html('你选择了:' + titles.join(','));
+                }
+            }
+        });
+        $('#demoStatic').on('click', function () {
+            demoStatic.open();
+        });
+
+        // 动态
+        var demoDynamic = new HtmlMultiSelector({
+            dynamic: true,
+            server: './data.json',
+            callback: {
+                done: function () {
+                    var titles = this.titleVal();
+                    $('#demoDynamic').html('你选择了:' + titles.join(','));
+                }
+            }
+        });
+        $('#demoDynamic').on('click', function () {
+            demoDynamic.open();
+        });
+
+        // 限定列数
+        var demoFixedLevel = new HtmlMultiSelector({
+            data: testData,
+            maxLevel: 3,
+            fixedLevel: 3,
+            callback: {
+                done: function () {
+                    var titles = this.titleVal();
+                    $('#demoFixedLevel').html('你选择了:' + titles.join(','));
+                }
+            }
+        });
+        $('#demoFixedLevel').on('click', function () {
+            demoFixedLevel.open();
+        });
+
+    });
+
+</script>
+
+</body>
+</html>
