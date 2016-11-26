@@ -256,8 +256,9 @@
             var initValues = [], initTitles = [];
             if (this.dom.container.length) {
                 var values;
-                var initValueStr = this.dom.container.find(this.opt.selectorValue).val();
-                if (initValueStr) {
+                var selectorValue = this.dom.container.find(this.opt.selectorValue);
+                if (selectorValue.length > 0) {
+                    var initValueStr = selectorValue.val();
                     values = initValueStr.split(this.opt.seperator);
                     for (var i = 0; i < values.length; i++) {
                         if (values[i]) {
