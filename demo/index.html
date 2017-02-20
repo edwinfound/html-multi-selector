@@ -50,6 +50,20 @@
             <a class="uk-button uk-button-primary" href="javascript:;" id="demoChinaArea">选择</a>
         </div>
     </div>
+    <hr>
+    <div class="uk-panel uk-panel-header">
+        <h3 class="uk-panel-title">中国省市（使用文字初始化）</h3>
+        <div>
+            <a class="uk-button uk-button-primary" href="javascript:;" id="demoChinaAreaWithInitValue1">选择</a>
+        </div>
+    </div>
+    <hr>
+    <div class="uk-panel uk-panel-header">
+        <h3 class="uk-panel-title">中国省市（使用ID初始化）</h3>
+        <div>
+            <a class="uk-button uk-button-primary" href="javascript:;" id="demoChinaAreaWithInitValue2">选择</a>
+        </div>
+    </div>
 </div>
 
 <div id="">
@@ -142,6 +156,14 @@
             });
             $('#demoChinaArea').on('click', function () {
                 demoChinaArea.open();
+            });
+            $('#demoChinaAreaWithInitValue1').on('click', function () {
+                demoChinaArea.open();
+                demoChinaArea.titleVal('北京市,市辖区,东城区'.split(','));
+            });
+            $('#demoChinaAreaWithInitValue2').on('click', function () {
+                demoChinaArea.open();
+                demoChinaArea.val('110000,110100,110103'.split(','));
             });
         });
 

@@ -72,10 +72,23 @@ var options={
         },
         // 点击取消时回调
         close: function () {
-        },
+        }
     }
 }
 ````
+
+## 成员方法
+
+```javascript
+// 获取ID值
+htmlMultiSelector.val()
+// 根据ID设置设置值
+htmlMultiSelector.val([1,2,3])
+// 获取Title值
+htmlMultiSelector.titleVal()
+// 根据Title设置值
+htmlMultiSelector.titleVal(['上海市','直辖市','徐汇区'])
+```
 
 ## 意见反馈
 
