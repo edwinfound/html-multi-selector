@@ -19,7 +19,7 @@ step1. 引入css
 step2. 引入js
 
 ```html
-<link rel="stylesheet" href="/path/to/js/html-multi-selector.js">
+<script src="/path/to/js/html-multi-selector.js"></script>
 ````
 
 step3. 使用JS代码初始化

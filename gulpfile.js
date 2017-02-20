@@ -24,7 +24,6 @@ gulp.task('buildLess', function () {
         .pipe(gulp.dest('dist'));
 });
 
-
 gulp.task('default', ['buildJs', 'buildLess'], function () {
 
 });
